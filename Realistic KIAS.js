@@ -215,6 +215,7 @@ function runTrueKias() {
     var timer = setInterval(function () {
       if (window.geofs && geofs.aircraft.instance && geofs.aircraft.instance.animationValue) {
         setKcas();
+        /*
         [ 'airspeed', 'airspeedJet', 'airspeedSupersonic' ].forEach(function (prop) {
           // Set it for any aircraft that load in the future.
           instruments.definitions[prop].overlay.overlays[0].animations[0].value = 'kcas';
@@ -223,6 +224,7 @@ function runTrueKias() {
             instruments.list[prop].overlay.children[0].definition.animations[0].value = 'kcas';
           }
         });
+        */
         clearInterval(timer);
         setInterval(setKcas, 16);
       }
