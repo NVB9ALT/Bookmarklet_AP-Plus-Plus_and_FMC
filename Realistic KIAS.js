@@ -204,7 +204,7 @@ function runTrueKias() {
     return Math.sqrt(2 * Qc / P0);
   }
   function setKcas() {
-    var animationValue = geofs.aircraft.instance.animationValue;
+    var animationValue = geofs.animation.values;
     animationValue.kcas = tasToCas(
       animationValue.ktas, animationValue.altitude * FEET_TO_METERS
     );
@@ -213,7 +213,7 @@ function runTrueKias() {
     // Convert KTAS to KCAS.
     // Ensure "kcas" property is set before changing it.
     var timer = setInterval(function () {
-      if (window.geofs && geofs.aircraft.instance && geofs.aircraft.instance.animationValue) {
+      if (window.geofs && geofs.aircraft.instance && geofs.animation.values) {
         setKcas();
         /*
         [ 'airspeed', 'airspeedJet', 'airspeedSupersonic' ].forEach(function (prop) {
